@@ -1,0 +1,22 @@
+npm i express nodemon dotenv cors jsonwebtoken cookie-parser
+
+npm 설정 -> "start": "nodemon app"
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const login = () => {
+    axios({
+      url: "http://localhost:8123/login",
+      method: "POST",
+      withCredentials: true,
+      data: {
+        email: email,
+        password: password,
+      },
+    }).then((result) => {
+      if (result.status === 200) {
+        window.open('/', '_self')
+      }
+    })
+  }
